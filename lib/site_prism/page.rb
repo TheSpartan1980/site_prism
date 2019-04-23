@@ -66,7 +66,7 @@ module SitePrism
     def displayed?(*args)
       expected_mappings = args.last.is_a?(::Hash) ? args.pop : {}
       begin
-        Waiter.wait_until_displayed(*args, url_matcher) { url_matches?(expected_mappings) } 
+        Waiter.wait_until_displayed(*args, url_matcher) { url_matches?(expected_mappings) }
       rescue SitePrism::TimeoutError
         false
       end
